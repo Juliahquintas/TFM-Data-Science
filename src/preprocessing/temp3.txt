@@ -1,0 +1,8 @@
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[37][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfor[39;00m ds_name, df [38;5;129;01min[39;00m [([33m'[39m[33mNeuroVoz[39m[33m'[39m, df_nv), ([33m'[39m[33mPC-GITA[39m[33m'[39m, [43mdf_pg[49m)]:
+[32m      2[39m     [38;5;28mprint[39m([33mf[39m[33m'[39m[38;5;130;01m\n[39;00m[33m=== [39m[38;5;132;01m{[39;00mds_name[38;5;132;01m}[39;00m[33m ===[39m[33m'[39m)
+[32m      3[39m     [38;5;28;01mfor[39;00m vocal [38;5;129;01min[39;00m VOCALES_INTERES:
+
+[31mNameError[39m: name 'df_pg' is not defined

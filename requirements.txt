@@ -8,3 +8,5 @@ pyyaml>=6.0
 tqdm>=4.60.0
 matplotlib>=3.5.0
 soundfile>=0.10.0
+ipykernel>=6.0
+
