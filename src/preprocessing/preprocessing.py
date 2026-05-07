@@ -65,6 +65,7 @@ def procesar_audio(input_path, output_path, target_dur_sec):
         max_amp = np.max(np.abs(y))
         if max_amp > 0:
             y = y / max_amp
+        # y = librosa.util.normalize(y, norm=np.inf)
             
         # 4. GUARDAR EN DISCO EL AUDIO PROCESADO
         output_path.parent.mkdir(parents=True, exist_ok=True)

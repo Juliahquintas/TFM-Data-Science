@@ -9,7 +9,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split # Para una división simple y no liarnos con Cross Validation
 
-from src.models.wavenet import WaveNet
+from src.models.Antiguo_wavenet import WaveNet
 from src.models.transformer_1d import Transformer1D
 from src.models.sincnet import SincNet
 from src.models.mamba_audio import MambaAudio
