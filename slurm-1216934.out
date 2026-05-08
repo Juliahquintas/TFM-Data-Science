@@ -1,0 +1,167 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) apps/2021
+Error while loading conda entry point: anaconda-auth (cannot import name 'Sentinel' from 'typing_extensions' (/media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages/typing_extensions.py))
+Error while loading conda entry point: conda-anaconda-tos (cannot import name 'Sentinel' from 'typing_extensions' (/media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages/typing_extensions.py))
+--------------------------------------------------------
+ Lanzando entrenamiento de src/experiments/tcn_parkinson.ipynb
+ Resultados se guardarán en: src/experiments/results/tcn_parkinson_20260508_185629
+--------------------------------------------------------
+Collecting librosa
+  Downloading librosa-0.11.0-py3-none-any.whl.metadata (8.7 kB)
+Collecting tqdm
+  Downloading tqdm-4.67.3-py3-none-any.whl.metadata (57 kB)
+Collecting soundfile
+  Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl.metadata (16 kB)
+Collecting audioread>=2.1.9 (from librosa)
+  Downloading audioread-3.1.0-py3-none-any.whl.metadata (9.0 kB)
+Collecting numba>=0.51.0 (from librosa)
+  Downloading numba-0.60.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+Requirement already satisfied: numpy>=1.22.3 in /media/apps/avx512-2021/software/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.25.1)
+Requirement already satisfied: scipy>=1.6.0 in /media/apps/avx512-2021/software/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.11.1)
+Requirement already satisfied: scikit-learn>=1.1.0 in /media/apps/avx512-2021/software/scikit-learn/1.4.2-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.4.2)
+Requirement already satisfied: joblib>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.2.0)
+Requirement already satisfied: decorator>=4.3.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (5.1.1)
+Requirement already satisfied: pooch>=1.1 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.7.0)
+Collecting soxr>=0.3.2 (from librosa)
+  Downloading soxr-1.1.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Requirement already satisfied: typing_extensions>=4.1.1 in /media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (4.6.3)
+Collecting lazy_loader>=0.1 (from librosa)
+  Downloading lazy_loader-0.5-py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: msgpack>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.0.5)
+Requirement already satisfied: cffi>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from soundfile) (1.15.1)
+Requirement already satisfied: pycparser in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from cffi>=1.0->soundfile) (2.21)
+Requirement already satisfied: packaging in /media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages (from lazy_loader>=0.1->librosa) (23.1)
+Collecting llvmlite<0.44,>=0.43.0dev0 (from numba>=0.51.0->librosa)
+  Downloading llvmlite-0.43.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.8 kB)
+Requirement already satisfied: platformdirs>=2.5.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from pooch>=1.1->librosa) (3.8.0)
+Requirement already satisfied: requests>=2.19.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from pooch>=1.1->librosa) (2.31.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.1.0)
+Requirement already satisfied: idna<4,>=2.5 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2023.5.7)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from scikit-learn>=1.1.0->librosa) (3.1.0)
+Downloading librosa-0.11.0-py3-none-any.whl (260 kB)
+Downloading tqdm-4.67.3-py3-none-any.whl (78 kB)
+Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 20.8 MB/s  0:00:00
+Downloading audioread-3.1.0-py3-none-any.whl (23 kB)
+Downloading lazy_loader-0.5-py3-none-any.whl (8.0 kB)
+Downloading numba-0.60.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 43.4 MB/s  0:00:00
+Downloading llvmlite-0.43.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 94.8 MB/s  0:00:00
+Downloading soxr-1.1.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
+Installing collected packages: tqdm, soxr, llvmlite, lazy_loader, audioread, soundfile, numba, librosa
+
+Successfully installed audioread-3.1.0 lazy_loader-0.5 librosa-0.11.0 llvmlite-0.43.0 numba-0.60.0 soundfile-0.13.1 soxr-1.1.0 tqdm-4.67.3
+[NbConvertApp] Converting notebook src/experiments/tcn_parkinson.ipynb to notebook
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Traceback (most recent call last):
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/bin/jupyter-nbconvert", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/jupyter_core/application.py", line 285, in launch_instance
+    return super().launch_instance(argv=argv, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/IPython/8.14.0-GCCcore-12.3.0/lib/python3.11/site-packages/traitlets/config/application.py", line 1043, in launch_instance
+    app.start()
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 410, in start
+    self.convert_notebooks()
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 585, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 551, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 477, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 352, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 100, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 121, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/media/apps/avx512-2021/software/jupyter-server/2.7.2-GCCcore-12.3.0/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+import sys
+import json
+import numpy as np
+import librosa
+from pathlib import Path
+from tqdm import tqdm
+
+import tensorflow as tf
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
+from sklearn.metrics import (
+    classification_report, confusion_matrix, roc_auc_score,
+    accuracy_score, ConfusionMatrixDisplay, RocCurveDisplay
+)
+import matplotlib.pyplot as plt
+
+# ── Detectar raíz del proyecto ────────────────────────────────────────────────
+PROJECT_ROOT = Path.cwd()
+while not (PROJECT_ROOT / 'data').exists() and PROJECT_ROOT != PROJECT_ROOT.parent:
+    PROJECT_ROOT = PROJECT_ROOT.parent
+print(f"PROJECT_ROOT: {PROJECT_ROOT}")
+
+# ── Importar TCNClassifier ────────────────────────────────────────────────────
+sys.path.insert(0, str(PROJECT_ROOT / 'src' / 'models'))
+from TCNClassifier import TCNClassifier
+
+print(f"TensorFlow: {tf.__version__}")
+print(f"GPU disponible: {tf.config.list_physical_devices('GPU')}")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 5[0m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mjson[39;00m
+[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m----> 5[0m [38;5;28;01mimport[39;00m [38;5;21;01mlibrosa[39;00m
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpathlib[39;00m [38;5;28;01mimport[39;00m Path
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtqdm[39;00m [38;5;28;01mimport[39;00m tqdm
+
+[0;31mModuleNotFoundError[0m: No module named 'librosa'
+
+Procesando el cuaderno para extraer log.csv y el resumen/accuracy...
+Error leyendo el notebook ejecutado: [Errno 2] No such file or directory: 'src/experiments/results/tcn_parkinson_20260508_185629/tcn_parkinson_ejecutado.ipynb'
+Trabajo finalizado.

@@ -1,0 +1,12 @@
+
+
+squeue -u y222732
+sbatch scripts/lanzar_pruebas/lanzar_experimentos.sh src/experiments/tcn_parkinson.ipynb
+
+
+
+
+
+
+
+
