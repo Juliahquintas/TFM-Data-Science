@@ -1,0 +1,63 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) apps/2021
+Requirement already satisfied: librosa in /home/y222/y222732/.local/lib/python3.11/site-packages (0.11.0)
+Requirement already satisfied: tqdm in /home/y222/y222732/.local/lib/python3.11/site-packages (4.67.3)
+Requirement already satisfied: soundfile in /home/y222/y222732/.local/lib/python3.11/site-packages (0.13.1)
+Requirement already satisfied: audioread>=2.1.9 in /home/y222/y222732/.local/lib/python3.11/site-packages (from librosa) (3.1.0)
+Requirement already satisfied: numba>=0.51.0 in /home/y222/y222732/.local/lib/python3.11/site-packages (from librosa) (0.65.1)
+Requirement already satisfied: numpy>=1.22.3 in /media/apps/avx512-2021/software/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.25.1)
+Requirement already satisfied: scipy>=1.6.0 in /media/apps/avx512-2021/software/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.11.1)
+Requirement already satisfied: scikit-learn>=1.1.0 in /media/apps/avx512-2021/software/scikit-learn/1.4.2-gfbf-2023a/lib/python3.11/site-packages (from librosa) (1.4.2)
+Requirement already satisfied: joblib>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.2.0)
+Requirement already satisfied: decorator>=4.3.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (5.1.1)
+Requirement already satisfied: pooch>=1.1 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.7.0)
+Requirement already satisfied: soxr>=0.3.2 in /home/y222/y222732/.local/lib/python3.11/site-packages (from librosa) (1.1.0)
+Requirement already satisfied: typing_extensions>=4.1.1 in /media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (4.6.3)
+Requirement already satisfied: lazy_loader>=0.1 in /home/y222/y222732/.local/lib/python3.11/site-packages (from librosa) (0.5)
+Requirement already satisfied: msgpack>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from librosa) (1.0.5)
+Requirement already satisfied: cffi>=1.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from soundfile) (1.15.1)
+Requirement already satisfied: pycparser in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from cffi>=1.0->soundfile) (2.21)
+Requirement already satisfied: packaging in /media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages (from lazy_loader>=0.1->librosa) (23.1)
+Requirement already satisfied: llvmlite<0.48,>=0.47.0dev0 in /home/y222/y222732/.local/lib/python3.11/site-packages (from numba>=0.51.0->librosa) (0.47.0)
+Requirement already satisfied: platformdirs>=2.5.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from pooch>=1.1->librosa) (3.8.0)
+Requirement already satisfied: requests>=2.19.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from pooch>=1.1->librosa) (2.31.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from scikit-learn>=1.1.0->librosa) (3.1.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.1.0)
+Requirement already satisfied: idna<4,>=2.5 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /media/apps/avx512-2021/software/Python-bundle-PyPI/2023.06-GCCcore-12.3.0/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2023.5.7)
+
+[notice] A new release of pip is available: 24.0 -> 26.1.1
+[notice] To update, run: pip install --upgrade pip
+Error while loading conda entry point: anaconda-auth (cannot import name 'Sentinel' from 'typing_extensions' (/media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages/typing_extensions.py))
+Error while loading conda entry point: conda-anaconda-tos (cannot import name 'Sentinel' from 'typing_extensions' (/media/apps/avx512-2021/software/hatchling/1.18.0-GCCcore-12.3.0/lib/python3.11/site-packages/typing_extensions.py))
+--------------------------------------------------------
+ Lanzando entrenamiento de src/experiments/tcn_parkinson.ipynb
+ Resultados se guardarán en: src/experiments/results/tcn_parkinson_20260509_103402
+--------------------------------------------------------
+[NbConvertApp] Converting notebook src/experiments/tcn_parkinson.ipynb to notebook
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+2026-05-09 10:34:08.766141: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-09 10:34:09.165863: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-05-09 10:34:09.165934: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-05-09 10:34:09.263145: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-05-09 10:34:23.894901: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 38374 MB memory:  -> device: 0, name: NVIDIA A100-PCIE-40GB, pci bus id: 0000:86:00.0, compute capability: 8.0
+2026-05-09 10:34:33.709661: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8902
+2026-05-09 10:34:36.638762: I external/local_xla/xla/service/service.cc:168] XLA service 0x14f1752b0cd0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2026-05-09 10:34:36.638801: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA A100-PCIE-40GB, Compute Capability 8.0
+2026-05-09 10:34:36.700779: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1778322876.964470    5290 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+[NbConvertApp] Writing 101167 bytes to src/experiments/results/tcn_parkinson_20260509_103402/tcn_parkinson_ejecutado.ipynb
+Procesando el cuaderno para extraer log.csv y el resumen/accuracy...
+Extracción completada. Revisa: src/experiments/results/tcn_parkinson_20260509_103402/log.csv y src/experiments/results/tcn_parkinson_20260509_103402/accuracy_y_resumen.txt
+Trabajo finalizado.
