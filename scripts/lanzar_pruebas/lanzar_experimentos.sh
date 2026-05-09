@@ -55,8 +55,8 @@ echo "--------------------------------------------------------"
 # 4. Ejecutar el Cuaderno
 export PYTHONPATH=$HOME/.local/lib/python3.11/site-packages:$PYTHONPATH
 
-# Se guardará el output en la carpeta de resultados
-jupyter nbconvert --execute --to notebook --output "$OUT_NOTEBOOK" "$NOTEBOOK"
+# Se guardará el output en la carpeta de resultados usando --output-dir
+jupyter nbconvert --execute --to notebook --output-dir "$OUT_DIR" --output "${BASENAME}_ejecutado.ipynb" "$NOTEBOOK"
 
 # 5. Extracción de Métricas usando Python (incrustado)
 echo "Procesando el cuaderno para extraer log.csv y el resumen/accuracy..."
