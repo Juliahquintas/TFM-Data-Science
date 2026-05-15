@@ -17,12 +17,12 @@ module load TensorFlow/2.15.1-foss-2023a-CUDA-12.1.1 \
             rasterio/1.3.9-foss-2023a \
             scikit-learn/1.4.2-gfbf-2023a
 
-# Instalamos las dependencias faltantes para el notebook en el entorno de usuario de CESVIMA (Python 3.11 del módulo)
-python3 -m pip install --user librosa tqdm soundfile
-
 # 2. Activar el entorno
 export PATH=~/conda/envs/framework/bin:~/conda/bin:$PATH
 source activate framework
+
+# Instalamos las dependencias faltantes dentro del entorno conda (Python 3.9)
+pip install librosa tqdm soundfile papermill
 
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX
@@ -53,10 +53,10 @@ echo " Resultados se guardarán en: $OUT_DIR"
 echo "--------------------------------------------------------"
 
 # 4. Ejecutar el Cuaderno
-export PYTHONPATH=$HOME/.local/lib/python3.11/site-packages:$PYTHONPATH
+export OUT_CSV="$OUT_CSV"
 
-# Se guardará el output en la carpeta de resultados usando --output-dir
-jupyter nbconvert --execute --to notebook --output-dir "$OUT_DIR" --output "${BASENAME}_ejecutado.ipynb" "$NOTEBOOK"
+# Usamos papermill con --log-output para ir viendo el progreso (logs) en tiempo real en el .out de Slurm
+python3 -m papermill "$NOTEBOOK" "$OUT_NOTEBOOK" --log-output
 
 # 5. Extracción de Métricas usando Python (incrustado)
 echo "Procesando el cuaderno para extraer log.csv y el resumen/accuracy..."
@@ -66,6 +66,7 @@ import json
 import csv
 import re
 import sys
+import os
 
 notebook_path = '$OUT_NOTEBOOK'
 csv_path = '$OUT_CSV'
@@ -116,11 +117,14 @@ for cell in nb.get('cells', []):
             if 'accuracy' in text.lower() or 'classification report' in text.lower() or 'roc auc' in text.lower() or 'f1-score' in text.lower() or 'confusion matrix' in text.lower():
                 accuracy_text.append(text)
 
-# Escribir log.csv
-with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerow(['Keras_Training_Logs'])
-    writer.writerows(log_rows)
+# Escribir log.csv solo si no existe (por si CSVLogger ya lo generó)
+if not os.path.exists(csv_path):
+    with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['Keras_Training_Logs'])
+        writer.writerows(log_rows)
+else:
+    print(f'El archivo {csv_path} ya fue generado en tiempo real por el cuaderno.')
 
 # Escribir el .txt con accuracy y summary
 with open(txt_path, 'w', encoding='utf-8') as f:
