@@ -488,24 +488,6 @@ def main():
     folds_data = splits[DATASET]   # lista de K dicts con 'train_files' y 'test_files'
 
 
-# --- BLOQUE CORREGIDO ---
-    for dataset_name in splits:
-        # Verificamos si es una lista (estructura de folds)
-        if isinstance(splits[dataset_name], list):
-            for fold_dict in splits[dataset_name]:
-                # Procesamos solo las claves que sabemos que son listas de rutas
-                for key in ['train_files', 'test_files']:
-                    if key in fold_dict:
-                        fold_dict[key] = [p.replace("\\", "/") for p in fold_dict[key]]
-        # Si fuera un diccionario simple (depende de cómo generaste el JSON)
-        elif isinstance(splits[dataset_name], dict):
-            for key in splits[dataset_name]:
-                if isinstance(splits[dataset_name][key], list):
-                    splits[dataset_name][key] = [p.replace("\\", "/") for p in splits[dataset_name][key]]
-    # ------------------------
-
-
-
     # Detectar target_samples del primer audio
     first_file  = PROCESSED_DIR / folds_data[0]['train_files'][0]
     y0, sr0     = librosa.load(first_file, sr=None, mono=True)
