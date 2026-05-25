@@ -1,0 +1,4 @@
+experiment,timestamp,dataset,nhid,kernel_size,dropout,batch_size,n_epochs,lr,val_ratio,seed,mean_accuracy,std_accuracy,mean_precision,std_precision,mean_recall,std_recall,mean_specificity,std_specificity,mean_f1,std_f1,mean_auc,std_auc
+20260525_083552_pc-gita_lr0.001_bs32_nhid32_do0.0,2026-05-25 09:01:34,pc-gita,32,3,0.0,32,200,0.001,0.1,42,0.5483,0.0532,0.4555,0.2607,0.5233,0.3807,0.5733,0.3732,0.4613,0.2789,0.6038,0.0931
+prueba1_validacionEquilibrada,2026-05-25 09:47:08,pc-gita,32,3,0.0,32,200,0.001,0.1,42,0.6167,0.0922,0.6649,0.1228,0.4567,0.2213,0.7767,0.1336,0.5216,0.18,0.6783,0.1127
+prueba1_val_loss,2026-05-25 10:38:42,pc-gita,32,3,0.0,32,200,0.001,0.1,42,0.5833,0.0391,0.6092,0.0709,0.51,0.1824,0.6567,0.1734,0.5394,0.0822,0.6307,0.0685

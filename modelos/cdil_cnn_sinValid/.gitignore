@@ -1,0 +1,23 @@
+# Resultados generados (modelos, gráficas, CSVs)
+# El fichero experiments_log.csv SÍ se sube (registro de experimentos)
+results/*/
+!results/experiments_log.csv
+!results/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.pth
+*.pt
+
+# Entornos virtuales
+.venv/
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
