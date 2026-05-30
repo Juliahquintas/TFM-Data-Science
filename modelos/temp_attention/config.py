@@ -7,7 +7,7 @@ y añade una fila al fichero results/experiments_log.csv para comparar.
 """
 
 # ── Dataset ───────────────────────────────────────────────────────────────────
-DATASET   = 'neurovoz'   # 'neurovoz' | 'pc-gita'
+DATASET   = 'pc-gita'   # 'neurovoz' | 'pc-gita'
 
 # ── Arquitectura ──────────────────────────────────────────────────────────────
 NHID         = 32    # canales por capa (feature maps)
@@ -36,4 +36,4 @@ LOG_EVERY_N_EPOCHS = 10   # imprime métricas cada N épocas (y en la 1ª y últ
 # ── Etiqueta del experimento (opcional) ───────────────────────────────────────
 # Si la dejas vacía se genera automáticamente a partir de los hiperparámetros.
 # Úsala para identificar el experimento en el log: ej. 'baseline', 'dropout02'
-EXPERIMENT_NAME = 'prueba1_sinValid_Neurovoz'
+EXPERIMENT_NAME = 'pc-gita_dropout00'

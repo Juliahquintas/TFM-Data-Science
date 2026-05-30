@@ -46,7 +46,11 @@ from sklearn.metrics import (
 # ── Importaciones locales ─────────────────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import config as cfg
-from model import CDILClassifier
+import importlib.util
+
+# from modelos.temp_attention.model import CDILClassifier
+# CDILAttentionClassifier
+from model import CDILAttentionClassifier
 
 CLASS_NAMES = ['Control', 'Parkinson']
 
@@ -85,63 +89,6 @@ def get_patient_id(fp: str) -> str:
         return stem.rsplit('_', 1)[0]
     # pc-gita: quitar los últimos 2 caracteres (vocal+número, ej. 'a1')
     return stem[:-2] if len(stem) > 2 else stem
-
-
-# def split_train_val_by_subject(train_files: list, val_ratio: float, seed: int):
-#     """
-#     Divide train_files en train/val garantizando que ningún paciente
-#     aparece en ambos grupos (subject-independent split).
-#     """
-#     patient_to_files = defaultdict(list)
-#     for fp in train_files:
-#         patient_to_files[get_patient_id(fp)].append(fp)
-
-#     patients = list(patient_to_files.keys())
-#     rng = random.Random(seed)
-#     rng.shuffle(patients)
-
-#     n_val      = max(1, int(len(patients) * val_ratio))
-#     val_pats   = set(patients[:n_val])
-#     train_pats = set(patients[n_val:])
-
-#     val_f   = [fp for fp in train_files if get_patient_id(fp) in val_pats]
-#     train_f = [fp for fp in train_files if get_patient_id(fp) in train_pats]
-#     return train_f, val_f
-
-
-
-# def split_train_val_by_subject(train_files: list, val_ratio: float, seed: int):
-#     """
-#     Split train/val subject-independent Y estratificado:
-#     toma val_ratio de sujetos HC y val_ratio de sujetos PD por separado,
-#     garantizando que val tenga siempre clases equilibradas.
-#     """
-#     # Agrupar archivos por sujeto
-#     patient_to_files = defaultdict(list)
-#     for fp in train_files:
-#         patient_to_files[get_patient_id(fp)].append(fp)
-
-#     # Separar sujetos HC y PD
-#     hc_patients = [p for p in patient_to_files
-#                    if 'Control' in patient_to_files[p][0]]
-#     pd_patients = [p for p in patient_to_files
-#                    if 'Control' not in patient_to_files[p][0]]
-
-#     rng = random.Random(seed)
-#     rng.shuffle(hc_patients)
-#     rng.shuffle(pd_patients)
-
-#     # Coger val_ratio de cada clase por separado
-#     n_val_hc = max(1, int(len(hc_patients) * val_ratio))
-#     n_val_pd = max(1, int(len(pd_patients) * val_ratio))
-
-#     val_patients = set(hc_patients[:n_val_hc] + pd_patients[:n_val_pd])
-
-#     val_f   = [fp for fp in train_files if get_patient_id(fp) in val_patients]
-#     train_f = [fp for fp in train_files if get_patient_id(fp) not in val_patients]
-#     return train_f, val_f
-
-
 
 def build_experiment_name() -> str:
     if cfg.EXPERIMENT_NAME:
@@ -326,20 +273,20 @@ def evaluate_fold(net, test_loader, device, fold_idx, run_dir):
 # ══════════════════════════════════════════════════════════════════════════════
 
 # def plot_learning_curves(tr_losses, tr_accs, vl_losses, vl_accs, fold_idx, run_dir):
-def plot_learning_curves(tr_losses, tr_accs, fold_idx, run_dir):
-    epochs = range(1, len(tr_losses) + 1)
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-    ax1.plot(epochs, tr_losses, label='Train')
-    # ax1.plot(epochs, vl_losses, label='Validation')
-    ax1.set_title('Loss'); ax1.set_xlabel('Epoch')
-    ax1.legend(); ax1.grid(alpha=0.3)
-    ax2.plot(epochs, tr_accs, label='Train')
-    # ax2.plot(epochs, vl_accs, label='Validation')
-    ax2.set_title('Accuracy (%)'); ax2.set_xlabel('Epoch')
-    ax2.legend(); ax2.grid(alpha=0.3)
-    fig.suptitle(f'Learning Curves — Fold {fold_idx}  [{cfg.DATASET}]')
-    plt.tight_layout()
-    plt.savefig(run_dir / f'curves_fold{fold_idx}.png', dpi=150); plt.close()
+# def plot_learning_curves(tr_losses, tr_accs, fold_idx, run_dir):
+#     epochs = range(1, len(tr_losses) + 1)
+#     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+#     ax1.plot(epochs, tr_losses, label='Train')
+#     # ax1.plot(epochs, vl_losses, label='Validation')
+#     ax1.set_title('Loss'); ax1.set_xlabel('Epoch')
+#     ax1.legend(); ax1.grid(alpha=0.3)
+#     ax2.plot(epochs, tr_accs, label='Train')
+#     # ax2.plot(epochs, vl_accs, label='Validation')
+#     ax2.set_title('Accuracy (%)'); ax2.set_xlabel('Epoch')
+#     ax2.legend(); ax2.grid(alpha=0.3)
+#     fig.suptitle(f'Learning Curves — Fold {fold_idx}  [{cfg.DATASET}]')
+#     plt.tight_layout()
+#     plt.savefig(run_dir / f'curves_fold{fold_idx}.png', dpi=150); plt.close()
 
 
 def plot_accumulated_cm(all_true, all_pred, run_dir):
@@ -486,7 +433,7 @@ def main():
     TARGET_SAMPLES = len(y0)
 
     # Mostrar info del modelo
-    _net_tmp  = CDILClassifier(TARGET_SAMPLES, cfg.NHID, cfg.KERNEL_SIZE, cfg.DROPOUT)
+    _net_tmp  = CDILAttentionClassifier(TARGET_SAMPLES, cfg.NHID, cfg.KERNEL_SIZE, cfg.DROPOUT)
     print(f"  Muestras/audio : {TARGET_SAMPLES}  ({TARGET_SAMPLES/sr0:.3f}s @ {sr0}Hz)")
     print(f"  Capas CDIL     : {_net_tmp.n_layers}  "
           f"(= min(floor(log2({TARGET_SAMPLES})), 8))")
@@ -507,49 +454,34 @@ def main():
         seed_everything(cfg.SEED + fold_idx)
 
         fd         = folds_data[fold_idx - 1]
-        # train_f, val_f = split_train_val_by_subject(
-        #     fd['train_files'], cfg.VAL_RATIO, cfg.SEED + fold_idx
-        # )
         train_f = fd['train_files']   # todos los audios de train, sin split
         test_f = fd['test_files']
 
-        # print(f"    Sujetos → Train: {len(set(get_patient_id(f) for f in train_f))}  "
-        #     #   f"Val: {len(set(get_patient_id(f) for f in val_f))}  "
-        #       f"Test: {len(set(get_patient_id(f) for f in test_f))}"
-        # print(f"    Audios  → Train: {len(train_f)}  "))
-        #     #   f"Val: {len(val_f)}  Test: {len(test_f)}")
 
 
-        print(
-            f"    Sujetos → Train: {len(set(get_patient_id(f) for f in train_f))}  "
-            f"Test: {len(set(get_patient_id(f) for f in test_f))}"
-        )
+        print(f"    Sujetos → Train: {len(set(get_patient_id(f) for f in train_f))}  "
+            f"Test: {len(set(get_patient_id(f) for f in test_f))}")
 
-        print(
-            f"    Audios  → Train: {len(train_f)}  "
-            f"Test: {len(test_f)}"
-        )
+        print(f"    Audios  → Train: {len(train_f)}  "
+            f"Test: {len(test_f)}")
+
 
         print("    Cargando audios...")
         ds_tr = AudioDataset(train_f, processed_dir, TARGET_SAMPLES)
-        # ds_v  = AudioDataset(val_f,   processed_dir, TARGET_SAMPLES)
         ds_te = AudioDataset(test_f,  processed_dir, TARGET_SAMPLES)
 
         ld_tr = DataLoader(ds_tr, cfg.BATCH_SIZE, shuffle=True,  drop_last=False)
-        # ld_v  = DataLoader(ds_v,  cfg.BATCH_SIZE, shuffle=False, drop_last=False)
         ld_te = DataLoader(ds_te, cfg.BATCH_SIZE, shuffle=False, drop_last=False)
 
-        net = CDILClassifier(TARGET_SAMPLES, cfg.NHID,
+        net = CDILAttentionClassifier(TARGET_SAMPLES, cfg.NHID,
                              cfg.KERNEL_SIZE, cfg.DROPOUT).to(device)
 
         print(f"\n    Entrenando ({cfg.N_EPOCHS} épocas, log cada "
               f"{cfg.LOG_EVERY_N_EPOCHS})...")
-        # net, tr_l, tr_a, vl_l, vl_a = train_fold(
-        #     net, ld_tr, ld_v, device, fold_idx, run_dir
-        # )
+
         net, tr_l, tr_a = train_fold(net, ld_tr, device, fold_idx, run_dir)
         # plot_learning_curves(tr_l, tr_a, vl_l, vl_a, fold_idx, run_dir)
-        plot_learning_curves(tr_l, tr_a, fold_idx, run_dir)
+        # plot_learning_curves(tr_l, tr_a, fold_idx, run_dir)
 
 
         metrics, y_true, y_pred, y_prob, fpr_c, tpr_c = evaluate_fold(

@@ -1,2 +1,0 @@
-experiment,timestamp,dataset,nhid,kernel_size,dropout,batch_size,n_epochs,lr,seed,mean_accuracy,std_accuracy,mean_precision,std_precision,mean_recall,std_recall,mean_specificity,std_specificity,mean_f1,std_f1,mean_auc,std_auc
-prueba1_sinValid,2026-05-25 11:29:54,pc-gita,32,3,0.0,32,200,0.001,42,0.63,0.1076,0.6559,0.1497,0.59,0.1256,0.67,0.1609,0.6141,0.1076,0.6888,0.1274

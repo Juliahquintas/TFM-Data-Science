@@ -12,7 +12,7 @@ DATASET   = 'pc-gita'   # 'neurovoz' | 'pc-gita'
 # ── Arquitectura ──────────────────────────────────────────────────────────────
 NHID         = 32    # canales por capa (feature maps)
 KERNEL_SIZE  = 3     # tamaño del kernel convolucional
-DROPOUT      = 0.0   # dropout tras cada bloque (0.0 = desactivado)
+DROPOUT      = 0.2   # dropout tras cada bloque (0.0 = desactivado)
 
 # ── Entrenamiento ─────────────────────────────────────────────────────────────
 BATCH_SIZE   = 32    # muestras por paso de gradiente
@@ -36,4 +36,4 @@ LOG_EVERY_N_EPOCHS = 10   # imprime métricas cada N épocas (y en la 1ª y últ
 # ── Etiqueta del experimento (opcional) ───────────────────────────────────────
 # Si la dejas vacía se genera automáticamente a partir de los hiperparámetros.
 # Úsala para identificar el experimento en el log: ej. 'baseline', 'dropout02'
-EXPERIMENT_NAME = 'prueba1_val_loss'
+EXPERIMENT_NAME = 'pc_gita_dropout02'
