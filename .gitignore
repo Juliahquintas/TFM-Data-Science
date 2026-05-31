@@ -46,3 +46,4 @@ error_*.txt
 # ----- Sistema Operativo -----
 .DS_Store
 Thumbs.db
+desktop.ini
