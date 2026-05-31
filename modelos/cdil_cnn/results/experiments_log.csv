@@ -1,3 +1,6 @@
 experiment,timestamp,dataset,nhid,kernel_size,dropout,batch_size,n_epochs,lr,seed,mean_accuracy,std_accuracy,mean_precision,std_precision,mean_recall,std_recall,mean_specificity,std_specificity,mean_f1,std_f1,mean_auc,std_auc
 prueba1_sinValid,2026-05-25 11:29:54,pc-gita,32,3,0.0,32,200,0.001,42,0.63,0.1076,0.6559,0.1497,0.59,0.1256,0.67,0.1609,0.6141,0.1076,0.6888,0.1274
 prueba1_sinValid_Neurovoz,2026-05-25 12:58:12,neurovoz,32,3,0.0,32,200,0.001,42,0.5877,0.0411,0.6229,0.0236,0.6657,0.0916,0.4877,0.0284,0.6422,0.0567,0.6048,0.0383
+pc_gita_nhid16_k3_dropout00,2026-05-30 16:28:07,pc-gita,16,3,0.0,32,200,0.001,42,0.6233,0.0947,0.6268,0.0989,0.65,0.1179,0.5967,0.1643,0.6322,0.086,0.6924,0.122
+pc_gita_nhid64_k3_dropout00,2026-05-31 10:26:31,pc-gita,64,3,0.0,32,200,0.001,42,0.6383,0.1075,0.6548,0.1268,0.58,0.1371,0.6967,0.107,0.613,0.1273,0.6933,0.1216
+pc_gita_nhid64_k3_dropout02,2026-05-31 12:07:45,pc-gita,64,3,0.2,32,200,0.001,42,0.6567,0.1175,0.6577,0.1161,0.65,0.1414,0.6633,0.1145,0.6523,0.1237,0.7035,0.1276
