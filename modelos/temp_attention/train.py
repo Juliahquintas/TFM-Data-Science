@@ -5,8 +5,7 @@ Uso:
     python train.py
 
 Antes de ejecutar:
-    · Ajusta los hiperparámetros en config.py
-    · Asegúrate de que data/data_splits.json y data/processed/ existen
+    · Se ajustan los hiperparámetros en config.py
 
 Salidas (en results/<nombre_experimento>/):
     · curves_fold{k}.png          curvas loss y accuracy por época
