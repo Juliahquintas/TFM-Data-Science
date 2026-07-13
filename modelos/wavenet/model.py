@@ -24,7 +24,7 @@ from torch.nn.utils import weight_norm
 
 
 MAX_LAYERS      = 8      # mismo límite que CDIL-CNN
-CIRCULAR_PADDING = False  # True → no causal (como CDIL); False → causal (WaveNet original)
+CIRCULAR_PADDING = True  # True → no causal (como CDIL); False → causal (WaveNet original)
 
 
 class GatedBlock(nn.Module):

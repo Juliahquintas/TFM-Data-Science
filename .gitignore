@@ -18,9 +18,15 @@ data/
 datasets/
 dataset/
 audios/
+preprocessing figures/
+reorganizar_neurovoz.py
+info/
 *.wav
 *.mp3
 *.flac
+*.pdf
+*.png
+*.gsheet
 
 # ----- Modelos Guardados (Pesados) -----
 # No subir los pesos temporales ni finales entrenados
@@ -47,3 +53,7 @@ error_*.txt
 .DS_Store
 Thumbs.db
 desktop.ini
+desktop.ini
+Desktop.ini
+Thumbs.db
+ehthumbs.db

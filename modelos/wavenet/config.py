@@ -7,17 +7,17 @@ y añade una fila al fichero results/experiments_log.csv para comparar.
 """
 
 # ── Dataset ───────────────────────────────────────────────────────────────────
-DATASET   = 'pc-gita'   # 'neurovoz' | 'pc-gita'
+DATASET   = 'neurovoz'   # 'neurovoz' | 'pc-gita'
 
 # ── Arquitectura ──────────────────────────────────────────────────────────────
 NHID         = 64    # canales por capa (feature maps)
 KERNEL_SIZE  = 3     # tamaño del kernel convolucional
-DROPOUT      = 0.0   # dropout tras cada bloque (0.0 = desactivado)
+DROPOUT      = 0.2   # dropout tras cada bloque (0.0 = desactivado)
 
 # ── Entrenamiento ─────────────────────────────────────────────────────────────
 BATCH_SIZE   = 32    # muestras por paso de gradiente
 N_EPOCHS     = 200   # épocas de entrenamiento
-LR           = 1e-3  # learning rate (Adam)
+LR           = 1e-4  # learning rate (Adam)
 
 # ── Validación ────────────────────────────────────────────────────────────────
 VAL_RATIO    = 0.10  # fracción de sujetos de train reservados para validación
@@ -36,4 +36,4 @@ LOG_EVERY_N_EPOCHS = 10   # imprime métricas cada N épocas (y en la 1ª y últ
 # ── Etiqueta del experimento (opcional) ───────────────────────────────────────
 # Si la dejas vacía se genera automáticamente a partir de los hiperparámetros.
 # Úsala para identificar el experimento en el log: ej. 'baseline', 'dropout02'
-EXPERIMENT_NAME = 'pc_gita_baseline'
+EXPERIMENT_NAME = 'neurovoz_nhid64_drop02_lr4'

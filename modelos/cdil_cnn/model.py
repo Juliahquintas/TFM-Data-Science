@@ -80,7 +80,8 @@ class CDILClassifier(nn.Module):
                  n_classes: int   = 2):
         super().__init__()
 
-        n_layers = min(int(np.log2(seq_len)), MAX_LAYERS)
+        # n_layers = min(int(np.log2(seq_len)), MAX_LAYERS)
+        n_layers = int(np.log2(seq_len))
 
         layers = []
         for i in range(n_layers):
