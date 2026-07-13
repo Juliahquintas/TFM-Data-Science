@@ -18,9 +18,9 @@ data/
 datasets/
 dataset/
 audios/
+info/
 preprocessing figures/
 reorganizar_neurovoz.py
-info/
 *.wav
 *.mp3
 *.flac
