@@ -13,7 +13,6 @@ __pycache__/
 .ipynb_checkpoints/
 
 # ----- Carpetas de Datos y Audios -----
-# ¡MUY IMPORTANTE! Nunca subiremos los audios locales de NeuroVoz ni PC-GITA
 data/
 datasets/
 dataset/
@@ -31,15 +30,13 @@ experiments_log.xlsx
 *.gsheet
 
 
-# ----- Modelos Guardados (Pesados) -----
-# No subir los pesos temporales ni finales entrenados
+# ----- Modelos Guardados -----
 *.pth
 *.pt
 models/saved/
 best_model*.pth
 
 # ----- Logs y Resultados -----
-# Resultados que arroje CESVIMA o las imágenes que vayas sacando
 logs/
 *.log
 output_*.txt
