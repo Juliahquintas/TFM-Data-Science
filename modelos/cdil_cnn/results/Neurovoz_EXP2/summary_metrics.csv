@@ -1,0 +1,2 @@
+mean_accuracy,mean_precision,mean_recall,mean_specificity,mean_f1,mean_auc,std_accuracy,std_precision,std_recall,std_specificity,std_f1,std_auc,model,dataset
+0.533,0.5955,0.5331,0.5336,0.5532,0.5599,0.031,0.0202,0.1483,0.1363,0.0826,0.041,CDIL,neurovoz

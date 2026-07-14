@@ -1,0 +1,2 @@
+mean_accuracy,mean_precision,mean_recall,mean_specificity,mean_f1,mean_auc,std_accuracy,std_precision,std_recall,std_specificity,std_f1,std_auc,model,dataset
+0.605,0.6656,0.4933,0.7167,0.5535,0.6936,0.1006,0.1895,0.1273,0.1728,0.1042,0.127,CDIL,pc-gita

@@ -27,7 +27,7 @@ experiments_log.xlsx
 *.mp3
 *.flac
 *.pdf
-*.png
+*.pt
 *.gsheet
 
 
@@ -44,7 +44,6 @@ logs/
 *.log
 output_*.txt
 error_*.txt
-*.png
 *.pdf
 
 # ----- Entornos de Desarrollo (IDE) -----

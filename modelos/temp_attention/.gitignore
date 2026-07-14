@@ -10,6 +10,21 @@ __pycache__/
 *.pth
 *.pt
 
+
+cm_fold1.png
+cm_fold2.png
+cm_fold3.png
+cm_fold4.png
+cm_fold5.png
+
+roc_fold1.png
+roc_fold2.png
+roc_fold3.png
+roc_fold4.png
+roc_fold5.png
+
+per_fold_metrics.csv
+
 # Entornos virtuales
 .venv/
 env/
